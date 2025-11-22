@@ -1,6 +1,6 @@
 import os
 import webbrowser
-def sistema(a, e, au, poweroff, reboot,navegador):
+def sistema(a, e, au, poweroff, reboot,navegador,start):
     os.system("clear")
     while True:
         os.system("clear")
@@ -14,7 +14,7 @@ def sistema(a, e, au, poweroff, reboot,navegador):
         elif "1" in menu:
             os.system(f"{e} ")
         elif "4" in menu:
-            os.system(f"{navegador}")
+            os.system(f"{start} {navegador}")
         elif "3" in menu:
             while True:
                 os.system("clear")
@@ -85,13 +85,13 @@ while True:
                 os.system(f"sudo pacman -S  --noconfirm {editor} {navegador}")
                 os.system("clear")
                 input ("otimo, pressione enter para começar a usar o sistema")
-                sistema("sudo pacman -S --noconfirm",editor, "sudo pacman -Rns --noconfirm","shutdown now","reboot","lynx")
+                sistema("sudo pacman -S --noconfirm",editor, "sudo pacman -Rns --noconfirm","shutdown now","reboot","lynx", " ")
            elif "2" in boot:
                editor = input ("qual é seu editor de texto? ")
-               sistema("sudo pacman -S --noconfirm",editor, "sudo pacman -Rns --noconfirm","shutdown now","reboot","lynx")
+               sistema("sudo pacman -S --noconfirm",editor, "sudo pacman -Rns --noconfirm","shutdown now","reboot","lynx"," ")
     elif "2" in p:
         editor = input ("qual é seu editor de texto? ")
-        sistema("sudo apt install -y",editor, "sudo apt remove -y","shutdown now","reboot","lynx")
+        sistema("sudo apt install -y",editor, "sudo apt remove -y","shutdown now","reboot","lynx"," ")
     elif "3" in p:
         print ("você tem uma instalação simples ou completa(com navegador e etc...)? digite 1 para simples e 2 para completa")
         while True:
@@ -102,14 +102,14 @@ while True:
                 os.system(f"sudo pacman -S  --noconfirm {editor} {navegador}")
                 os.system("clear")
                 input ("otimo, pressione enter para começar a usar o sistema")
-                sistema("pkg install",editor, "pkg install","poweroff","reboot","lynx")
+                sistema("pkg install",editor, "pkg install","poweroff","reboot","lynx"," ")
            elif "2" in boot:
                editor = input ("qual é seu editor de texto? ")
-               sistema("pkg install",editor, "pkg install","poweroff","reboot","lynx")
+               sistema("pkg install",editor, "pkg install","poweroff","reboot","lynx"," ")
     elif "4" in p:
         editor = input ("editor de texto: ")
         navegado = input ("navegador: ")
-        sistema("winget install",editor, "winget uninstall","shutdown /s /t 00","shutdown /r /t 0",navegado)
+        sistema("winget install",editor, "winget uninstall","shutdown /s /t 00","shutdown /r /t 0",navegado,"start")
 
 
 
