@@ -41,27 +41,29 @@ while True:
     if "4" == p:
         os.system("ls -a")
         while True:
-            arquivo = input ("qual arquivo que deseja usar/alterar (backk para sair)? ")
-            print ("1. mover")
-            print ("2. copiar")
-            print ("3. deletar")
-            while True:
-                escolha = input (": ")
-                if "1" == escolha:
-                    mover = input ("para onde (digite o caminho)? ")
-                    os.system(f"mv {{arquivo}} {{mover}}") # Escapando aqui também
-                    break
-                if "2" == escolha:
-                    mover = input ("para a onde (digite o caminho)? ")
-                    os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
-                if "3" == escolha:
-                    os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
-                if "backk" == escolha:
-                    break
+            if "backk" in arquivo:
                 break
-                else:
-                    print ("erro, comando não encontrado")
-                    continue
+            else:
+                arquivo = input ("qual arquivo que deseja usar/alterar (backk para sair)? ")
+                print ("1. mover")
+                print ("2. copiar")
+                print ("3. deletar")
+                while True:
+                    escolha = input (": ")
+                    if "1" == escolha:
+                        mover = input ("para onde (digite o caminho)? ")
+                        os.system(f"mv {{arquivo}} {{mover}}") # Escapando aqui também
+                        break
+                    if "2" == escolha:
+                        mover = input ("para a onde (digite o caminho)? ")
+                        os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
+                    if "3" == escolha:
+                        os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
+                    if "backk" == escolha:
+                        break
+                    else:
+                        print ("erro, comando não encontrado")
+                        continue
     else:
         print ("opção invalida, clique enter para repetir")
         input()
