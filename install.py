@@ -58,6 +58,7 @@ while True:
                     os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
                 if "backk" == escolha
                     break
+                break
                 else:
                     print ("erro, comando não encontrado")
                     continue
