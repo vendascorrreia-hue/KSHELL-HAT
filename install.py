@@ -87,3 +87,8 @@ while True:
     if "3" == distro:
         sistema1("sudo dnf install","sudo dnf remove")
         break
+    if "4" == distro:
+        sistema1("sudo apt install","sudo apt remove")
+    else:
+        print ("opção não encontrada")
+        continue
