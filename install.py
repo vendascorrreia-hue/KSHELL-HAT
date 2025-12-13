@@ -14,51 +14,51 @@ while True:
     # Definimos APT_CMD e UNI_CMD como variáveis globais no script gerado:
     APT_CMD = "{apt}"
     UNI_CMD = "{uni}"
-        p = input (": ")
-        if "1" in p:
-            print ("terminal, digite backk para sair, mas aqui é limitado para pastas e arquivos")
-            while True:
-                t = input (">>> ")
-                if "backk" == t:
-                    break
-                else:
-                    subprocess.run(t, shell=True)
-                    continue
-        if "2" in p:
-            print ("digite backk para sair ou [nome do pacote] -u para desistalar algo")
-            while True:
-                loop = input(": ")
-                if "backk" == loop:
-                    break
-                if "-u" in loop:
+    p = input (": ")
+    if "1" in p:
+        print ("terminal, digite backk para sair, mas aqui é limitado para pastas e arquivos")
+        while True:
+            t = input (">>> ")
+            if "backk" == t:
+                break
+            else:
+                subprocess.run(t, shell=True)
+                continue
+    if "2" in p:
+        print ("digite backk para sair ou [nome do pacote] -u para desistalar algo")
+        while True:
+            loop = input(": ")
+            if "backk" == loop:
+                break
+            if "-u" in loop:
                     # Use {{ }} para que a f-string seja processada APENAS quando kshell-hat.py rodar
-                    os.system(f"{{UNI_CMD}} {{loop}}")
-                else:
+                os.system(f"{{UNI_CMD}} {{loop}}")
+            else:
                     # Use {{ }} aqui também
-                    os.system (f"{{APT_CMD}} {{loop}}")
-        if "3" in p:
-            os.system(editor)
-        if "4" in p:
-            os.system("ls -a")
+                os.system (f"{{APT_CMD}} {{loop}}")
+    if "3" in p:
+        os.system(editor)
+    if "4" in p:
+        os.system("ls -a")
+        while True:
+            arquivo = input ("qual arquivo que deseja usar/alterar (backk para sair)? ")
+            print ("1. mover")
+            print ("2. copiar")
+            print ("3. deletar")
             while True:
-                arquivo = input ("qual arquivo que deseja usar/alterar (backk para sair)? ")
-                print ("1. mover")
-                print ("2. copiar")
-                print ("3. deletar")
-                while True:
-                    escolha = input (": ")
-                    if "1" in escolha:
-                        mover = input ("para onde (digite o caminho)? ")
-                        os.system(f"mv {{arquivo}} {{mover}}") # Escapando aqui também
-                        break
-                    if "2" in escolha:
-                        mover = input ("para a onde (digite o caminho)? ")
-                        os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
-                    if "3" in escolha:
-                        os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
-                    else:
-                        print ("erro, comando não encontrado")
-                        continue
+                escolha = input (": ")
+                if "1" in escolha:
+                    mover = input ("para onde (digite o caminho)? ")
+                    os.system(f"mv {{arquivo}} {{mover}}") # Escapando aqui também
+                    break
+                if "2" in escolha:
+                    mover = input ("para a onde (digite o caminho)? ")
+                    os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
+                if "3" in escolha:
+                    os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
+                else:
+                    print ("erro, comando não encontrado")
+                    continue
 EOF
 """
     os.system(sistema)
