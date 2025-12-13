@@ -15,7 +15,7 @@ while True:
     APT_CMD = "{apt}"
     UNI_CMD = "{uni}"
     p = input (": ")
-    if "1" in p:
+    if "1" == p:
         print ("terminal, digite backk para sair, mas aqui é limitado para pastas e arquivos")
         while True:
             t = input (">>> ")
@@ -24,7 +24,7 @@ while True:
             else:
                 subprocess.run(t, shell=True)
                 continue
-    if "2" in p:
+    if "2" == p:
         print ("digite backk para sair ou [nome do pacote] -u para desistalar algo")
         while True:
             loop = input(": ")
@@ -36,9 +36,9 @@ while True:
             else:
                     # Use {{ }} aqui também
                 os.system (f"{{APT_CMD}} {{loop}}")
-    if "3" in p:
+    if "3" == p:
         os.system(editor)
-    if "4" in p:
+    if "4" == p:
         os.system("ls -a")
         while True:
             arquivo = input ("qual arquivo que deseja usar/alterar (backk para sair)? ")
@@ -47,18 +47,22 @@ while True:
             print ("3. deletar")
             while True:
                 escolha = input (": ")
-                if "1" in escolha:
+                if "1" == escolha:
                     mover = input ("para onde (digite o caminho)? ")
                     os.system(f"mv {{arquivo}} {{mover}}") # Escapando aqui também
                     break
-                if "2" in escolha:
+                if "2" == escolha:
                     mover = input ("para a onde (digite o caminho)? ")
                     os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
-                if "3" in escolha:
+                if "3" == escolha:
                     os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
+                if "backk" ==
                 else:
                     print ("erro, comando não encontrado")
                     continue
+    else:
+        print ("opção invalida, clique enter para repetir")
+        input()
 EOF
 """
     os.system(sistema)
