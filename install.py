@@ -56,7 +56,7 @@ while True:
                     os.system(f"cp {{arquivo}} {{mover}}") # Escapando aqui também
                 if "3" == escolha:
                     os.system (f"rm -rf {{arquivo}}") # Escapando aqui também
-                if "backk" == escolha
+                if "backk" == escolha:
                     break
                 break
                 else:
